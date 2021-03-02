@@ -1,0 +1,34 @@
+<div class="main-content">
+    <div class="container mt-5">
+        <div class="card shadow-sm">
+            <div class="card-header text-light bg-dark">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <h3>Transaction Details List</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <table class="table text-center mt-3">
+                    <thead>
+                        <tr>
+                            <th scope="col">No</th>
+                            <th scope="col">Borrow Detail Code</th>
+                            <th scope="col">Borrow End Date</th>
+                            <th scope="col">Detail Book Code</th>
+                        </tr>
+                    </thead>
+                    <tbody *ngFor="let data of listTrDtl; index as i;">
+                        <tr>
+                            <th scope="row">{{i+1}}</th>
+                            <td>{{data.borrowDtlCode}}</td>
+                            <td>{{data.borrowEnd | date: 'EEEE, d MMMM y'}}</td>
+                            <td>{{data.bookDtlId.bookDtlCode}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <a routerLink="/list-transactions-csh" class="btn btn-outline-dark mt-3">Back</a>
+    </div>
+</div>

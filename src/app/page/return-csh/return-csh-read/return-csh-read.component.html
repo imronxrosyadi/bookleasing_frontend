@@ -1,0 +1,43 @@
+<div class="main-content">
+    <div class="container mt-5">
+        <div class="card shadow-sm">
+            <div class="card-header text-light bg-dark">
+                <div class="row">
+                    <div class="col-lg-8 col-md-6">
+                        <h3>Return Transactions List</h3>
+                    </div>
+                    <div class="col-lg-4 col-md-6 justify-content-end">
+                        <a *ngIf="!isAdmin" routerLink="/modif-return-csh" class="btn btn-outline-light float-right">+
+                            Create</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <table class="table text-center">
+                    <thead>
+                        <tr>
+                            <th scope="col">No</th>
+                            <th scope="col">Borrow Detail Code</th>
+                            <th scope="col">Borrow Done</th>
+                            <th scope="col">Borrow Late Price</th>
+                            <th scope="col">Return Total Price</th>
+                            <th scope="col">Payment Method</th>
+                            <th scope="col">Added by</th>
+                        </tr>
+                    </thead>
+                    <tbody *ngFor="let data of listReturn; index as i;">
+                        <tr>
+                            <th scope="row">{{i+1}}</th>
+                            <td>{{data.trDetailId.borrowDtlCode}}</td>
+                            <td>{{data.borrowDone | date: 'EEEE, d MMMM y'}}</td>
+                            <td>{{data.borrowLatePrice | currency:'IDR'}}</td>
+                            <td>{{data.returnPrice | currency:'IDR'}}</td>
+                            <td>{{data.payId.payName}}</td>
+                            <td>{{data.profileId.profileName}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

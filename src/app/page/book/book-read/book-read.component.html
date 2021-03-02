@@ -1,0 +1,51 @@
+<div class="main-content">
+    <div class="container-fluid col-lg-12 mt-5">
+        <div class="card shadow-sm">
+            <div class="card-header text-white bg-dark">
+                <div class="row">
+                    <div class="col-lg-8 col-md-6">
+                        <h3>Books List</h3>
+                    </div>
+                    <div class="col-lg-4 col-md-6 justify-content-end">
+                        <a routerLink="/modif-book" class="btn btn-outline-light float-right">+ Create</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <table class="table text-center">
+                    <thead>
+                        <tr>
+                            <th scope="col">No</th>
+                            <th scope="col">Book Code</th>
+                            <th scope="col">Book Name</th>
+                            <th scope="col">Book Price</th>
+                            <th scope="col">Published Year</th>
+                            <th scope="col">Category</th>
+                            <th scope="col">Publisher</th>
+                            <th scope="col">Added by</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody *ngFor="let data of listBook; index as i;">
+                        <tr>
+                            <th scope="row">{{i+1}}</th>
+                            <td>{{data.bookCode}}</td>
+                            <td>{{data.bookName}}</td>
+                            <td>{{data.bookPrice | currency:'IDR'}}</td>
+                            <td>{{data.bookPublish}}</td>
+                            <td>{{data.bookCategory.categoryName}}</td>
+                            <td>{{data.bookPublisher.publisherName}}</td>
+                            <td>{{data.profileId.profileName}}</td>
+                            <td>
+                                <a [routerLink]="['/list-bookdetails', data.bookCode]"
+                                    class="btn btn-outline-success mr-1">Details</a>
+                                <a routerLink="/modif-book" class="btn btn-outline-primary mr-1">Edit</a>
+                                <a class="btn btn-outline-danger">Delete</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

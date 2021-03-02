@@ -1,0 +1,91 @@
+<div class="main-content">
+    <div class="container mt-5 border shadow-sm p-5">
+        <div class="row">
+            <h3 class="mb-4 text-align-center col-lg-6">Modify Transaction</h3>
+            <h3 class="mb-4 text-align-center col-lg-6">Details</h3>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <!-- <form> -->
+                <div class="form-group row">
+                    <label class="col-lg-4">Borrow Date</label>
+                    <input type="datetime-local" id="borrowDate" class="form-control col-lg-5" name="borrowDate"
+                        [(ngModel)]="borrowDate">
+                </div>
+                <div class="form-group row">
+                    <label for="customer" class="col-lg-4">Customer</label>
+                    <select class="form-control col-lg-5" id="customer" name="customer" [(ngModel)]="selectedCustomer">
+                        <option *ngFor="let data of listCust" [ngValue]="data" [selected]="data == selectedCustomer">
+                            {{data.custCode}}</option>
+                    </select>
+                </div>
+                <div class="form-group row">
+                    <label for="payment" class="col-lg-4">Payments</label>
+                    <select class="form-control col-lg-5" id="payment" name="payment" [(ngModel)]="selectedPayment">
+                        <option *ngFor="let data of listPayment" [ngValue]="data"
+                            [selected]="data.pCode == selectedPayment">{{data.payCode}}</option>
+                    </select>
+                </div>
+                <!-- </form> -->
+            </div>
+            <div class="col-lg-6">
+                <!-- <form> -->
+                <div class="form-group row">
+                    <label class="col-lg-4">Borrow End Date</label>
+                    <input type="datetime-local" id="borrowDate" class="form-control col-lg-5" name="borrowDate"
+                        [(ngModel)]="borrowEndDate">
+                </div>
+                <div class="form-group row">
+                    <label for="bookDtlCode" class="col-lg-4">Detail Book Code</label>
+                    <select class="form-control col-lg-5" id="bookDtlCode" name="bookDtlCode"
+                        [(ngModel)]="selectedBookDtl">
+                        <option *ngFor="let data of listBookDtl" [ngValue]="data" [selected]="data == selectedBookDtl">
+                            {{data.bookDtlCode}}</option>
+                    </select>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-md-3">
+
+                    </div>
+                    <div class="col-lg-5 col-md-5 ml-3">
+                        <button type="submit" class="btn btn-outline-dark float-right"
+                            (click)="addDetail()">Add</button>
+                    </div>
+                </div>
+                <!-- </form> -->
+            </div>
+        </div>
+        <h3 class="mt-3">Added Details List</h3>
+        <table class="table text-center mt-3">
+            <thead>
+                <tr>
+                    <th scope="col">No</th>
+                    <!-- <th scope="col">Borrow Detail Code</th> -->
+                    <th scope="col">Borrow End Date</th>
+                    <th scope="col">Detail Book Code</th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let data of dataDetails; let i = index;">
+                <tr>
+                    <th scope="row">{{i+1}}</th>
+                    <td>{{data[0]}}</td>
+                    <td>{{data[1]}}</td>
+                </tr>
+                <tr>
+
+                </tr>
+                <tr>
+
+                </tr>
+            </tbody>
+        </table>
+        <div class="row mt-5">
+            <div class="col-lg-6 col-md-3">
+                <a routerLink="/list-transactions-csh" class="btn btn-outline-dark">Back</a>
+            </div>
+            <div class="col-lg-6 col-md-5">
+                <button type="submit" class="btn btn-outline-dark float-right" (click)="addTransaction()">Save</button>
+            </div>
+        </div>
+    </div>
+</div>

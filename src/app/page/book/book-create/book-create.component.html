@@ -1,0 +1,48 @@
+<div class="main-content">
+    <div class="container mt-5">
+        <h3 class="mb-4 text-align-center">Modify Book</h3>
+        <form>
+            <div class="form-group row">
+                <label for="bookCode" class="col-lg-2">Book Code</label>
+                <input type="text" class="form-control col-lg-3" id="bookCode" name="bookCode" [(ngModel)]="bookCode">
+            </div>
+            <div class="form-group row">
+                <label for="bookName" class="col-lg-2">Book Name</label>
+                <input type="text" class="form-control col-lg-3" id="bookName" name="bookName" [(ngModel)]="bookName">
+            </div>
+            <div class="form-group row">
+                <label for="bookPrice" class="col-lg-2">Book Price</label>
+                <input type="text" class="form-control col-lg-3" id="bookPrice" name="bookPrice"
+                    [(ngModel)]="bookPrice">
+            </div>
+            <div class="form-group row">
+                <label for="bookPublish" class="col-lg-2">Published Year</label>
+                <input type="text" class="form-control col-lg-3" id="bookPublish" name="bookPublish"
+                    [(ngModel)]="bookPublish">
+            </div>
+            <div class="form-group row">
+                <label for="category" class="col-lg-2">Category</label>
+                <select class="form-control col-lg-3" id="category" name="category" [(ngModel)]="selectedCat">
+                    <option *ngFor="let data of listCat" [ngValue]="data" [selected]="data == selectedCat">
+                        {{data.categoryCode}}</option>
+                </select>
+            </div>
+            <div class="form-group row">
+                <label for="publisher" class="col-lg-2">Publisher</label>
+                <select class="form-control col-lg-3" id="publisher" name="publisher" [(ngModel)]="selectedPub">
+                    <option *ngFor="let data of listPub" [ngValue]="data" [selected]="data == selectedPub">
+                        {{data.publisherCode}}</option>
+                </select>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-2 col-md-3">
+                    <a routerLink="/list-books" class="btn btn-outline-dark">Back</a>
+                </div>
+                <div class="col-lg-3 col-md-5 ml-3">
+                    <button type="submit" class="btn btn-outline-dark float-right" (click)="addBook()">Save</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

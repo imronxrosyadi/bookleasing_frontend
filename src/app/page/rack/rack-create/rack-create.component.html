@@ -1,0 +1,28 @@
+<div class="main-content">
+    <div class="container mt-5">
+        <h3 class="mb-4 text-align-center">Modify Rack</h3>
+        <form>
+            <div class="form-group row">
+                <label for="rackCode" class="col-lg-2">Rack Code</label>
+                <input type="text" class="form-control col-lg-3" id="rackCode" name="rackCode" [(ngModel)]="rackCode">
+            </div>
+            <div class="form-group row">
+                <label for="rackRow" class="col-lg-2">Rack Row</label>
+                <input type="text" class="form-control col-lg-3" id="rackRow" name="rackRow" [(ngModel)]="rackRow">
+            </div>
+            <div class="form-group row">
+                <label for="rackColumn" class="col-lg-2">Rack Column</label>
+                <input type="text" class="form-control col-lg-3" id="rackColumn" name="rackColumn"
+                    [(ngModel)]="rackColumn">
+            </div>
+            <div class="row">
+                <div class="col-lg-2 col-md-3">
+                    <a routerLink="/list-racks" class="btn btn-outline-dark">Back</a>
+                </div>
+                <div class="col-lg-3 col-md-5 ml-3">
+                    <button type="submit" class="btn btn-outline-dark float-right" (click)="addRack()">Save</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,45 @@
+<div class="main-content">
+    <div class="container mt-5">
+        <h3 class="mb-4 text-align-center">Modify Return Transaction</h3>
+        <!-- <form> -->
+        <div class="form-group row">
+            <label for="dtlBorrowCode" class="col-lg-2">Detail Borrow Code</label>
+            <select class="form-control col-lg-3" id="dtlBorrowCode" name="dtlBorrow" [(ngModel)]="selectedDtlBorrow">
+                <option *ngFor="let data of listDtlBorrow" [ngValue]="data" [selected]="data == selectedDtlBorrow">
+                    {{data.borrowDtlCode}}</option>
+            </select>
+        </div>
+        <div class="form-group row">
+            <label class="col-lg-2">Return Date</label>
+            <input type="datetime-local" id="return" class="form-control col-lg-3" name="borrowDone"
+                [(ngModel)]="borrowDone">
+        </div>
+        <div class="form-group row">
+            <label for="latePrice" class="col-lg-2">Borrow Late Price</label>
+            <input type="text" class="form-control col-lg-3" id="latePrice" name="borrowLatePrice"
+                [(ngModel)]="borrowLatePrice">
+        </div>
+        <div class="form-group row">
+            <label for="returnPrice" class="col-lg-2">Return Price</label>
+            <input type="text" class="form-control col-lg-3" id="returnPrice" name="returnPrice"
+                [(ngModel)]="returnPrice">
+        </div>
+        <div class="form-group row">
+            <label for="paymentMethod" class="col-lg-2">Payment Method</label>
+            <select class="form-control col-lg-3" id="paymentMethod" name="paymentMethod" [(ngModel)]="selectedPayment">
+                <option *ngFor="let data of listPayment" [ngValue]="data" [selected]="data == selectedPayment">
+                    {{data.payCode}}</option>
+            </select>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-2 col-md-3">
+                <a routerLink="/list-returns-csh" class="btn btn-outline-dark">Back</a>
+            </div>
+            <div class="col-lg-3 col-md-5 ml-3">
+                <button type="submit" class="btn btn-outline-dark float-right" (click)="addReturnTr()">Save</button>
+            </div>
+        </div>
+        <!-- </form> -->
+    </div>
+</div>

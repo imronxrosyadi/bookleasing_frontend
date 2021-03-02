@@ -1,0 +1,15 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: white;
+}
+
+.main-content {
+  margin-bottom: 150px;
+}
+
+.footer {
+  bottom: 0;
+}

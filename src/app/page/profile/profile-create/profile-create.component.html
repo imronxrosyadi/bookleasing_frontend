@@ -1,0 +1,64 @@
+<div class="main-content">
+    <div class="container mt-5">
+        <h3 class="mb-4 text-align-center">Modify Profile</h3>
+        <form>
+            <div class="form-group row">
+                <label for="profileCode" class="col-lg-2">Profile Code</label>
+                <input type="text" class="form-control col-lg-3" id="profileCode" name="profileCode"
+                    [(ngModel)]="proCode">
+            </div>
+            <div class="form-group row">
+                <label for="profileName" class="col-lg-2">Profile Name</label>
+                <input type="text" class="form-control col-lg-3" id="profileName" name="profileName"
+                    [(ngModel)]="proName">
+            </div>
+            <div class="form-group row">
+                <label for="profilePhone" class="col-lg-2">Profile Phone</label>
+                <input type="text" class="form-control col-lg-3" id="profilePhone" name="profilePhone"
+                    [(ngModel)]="proPhone">
+            </div>
+            <div class="form-group row">
+                <label for="profileEmail" class="col-lg-2">Profile Email</label>
+                <input type="text" class="form-control col-lg-3" id="profileEmail" name="profileEmail"
+                    [(ngModel)]="proEmail">
+            </div>
+            <div class="form-group row">
+                <label for="profileAddress" class="col-lg-2">Profile Address</label>
+                <input type="text" class="form-control col-lg-3" id="profileAddress" name="profileAddress"
+                    [(ngModel)]="proAddress">
+            </div>
+            <div class="form-group row">
+                <label for="" class="col-lg-2">Gender</label>
+                <div class="form-check col-lg-1">
+                    <input class="form-check-input" type="radio" name="gender" id="LK" value="LK"
+                        [(ngModel)]="genderCode" checked>
+                    <label class="form-check-label" for="LK">
+                        Laki-laki
+                    </label>
+                </div>
+                <div class="form-check col-lg-1">
+                    <input class="form-check-input" type="radio" name="gender" id="PR" value="PR"
+                        [(ngModel)]="genderCode">
+                    <label class="form-check-label" for="PR">
+                        Perempuan
+                    </label>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="username" class="col-lg-2">Username</label>
+                <select class="form-control col-lg-3" id="username" name="username" [(ngModel)]="selectedUser">
+                    <option *ngFor="let data of listUser" [ngValue]="data" [selected]="data == selectedUser">
+                        {{data.username}}</option>
+                </select>
+            </div>
+            <div class="row">
+                <div class="col-lg-2 col-md-3">
+                    <a routerLink="/list-profiles" class="btn btn-outline-dark">Back</a>
+                </div>
+                <div class="col-lg-3 col-md-5 ml-3">
+                    <button type="submit" class="btn btn-outline-dark float-right" (click)="addProfile()">Save</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

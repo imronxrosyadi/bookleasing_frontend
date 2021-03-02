@@ -1,0 +1,55 @@
+<div class="main-content">
+    <div class="container mt-5">
+        <h3 class="mb-4 text-align-center">Modify Customer</h3>
+        <form>
+            <div class="form-group row">
+                <label for="custCode" class="col-lg-2">Customer Code</label>
+                <input type="text" class="form-control col-lg-3" id="custCode" name="custCode" [(ngModel)]="custCode">
+            </div>
+            <div class="form-group row">
+                <label for="custName" class="col-lg-2">Customer Name</label>
+                <input type="text" class="form-control col-lg-3" id="custName" name="custName" [(ngModel)]="custName">
+            </div>
+            <div class="form-group row">
+                <label for="custPhone" class="col-lg-2">Customer Phone</label>
+                <input type="text" class="form-control col-lg-3" id="custPhone" name="custPhone"
+                    [(ngModel)]="custPhone">
+            </div>
+            <div class="form-group row">
+                <label for="custEmail" class="col-lg-2">Customer Email</label>
+                <input type="text" class="form-control col-lg-3" id="custEmail" name="custEmail"
+                    [(ngModel)]="custEmail">
+            </div>
+            <div class="form-group row">
+                <label for="custAddress" class="col-lg-2">Customer Address</label>
+                <input type="text" class="form-control col-lg-3" id="custAddress" name="custAddress"
+                    [(ngModel)]="custAddress">
+            </div>
+            <div class="row">
+                <label for="" class="col-lg-2">Gender</label>
+                <div class="form-check col-lg-1">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="LK"
+                        checked name="genderCode" [(ngModel)]="genderCode">
+                    <label class="form-check-label" for="exampleRadios1">
+                        Laki-laki
+                    </label>
+                </div>
+                <div class="form-check col-lg-1">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="PR"
+                        name="genderCode" [(ngModel)]="genderCode">
+                    <label class="form-check-label" for="exampleRadios2">
+                        Perempuan
+                    </label>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-lg-2 col-md-3">
+                    <a routerLink="/list-customers-csh" class="btn btn-outline-dark">Back</a>
+                </div>
+                <div class="col-lg-3 col-md-5 ml-3">
+                    <button type="submit" class="btn btn-outline-dark float-right" (click)="addCustomer()">Save</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
